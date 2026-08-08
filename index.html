@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bharath M — Data Architect, Azure & Big Data Expert, Enterprise Data Solutions Leader">
+<title>Bharath M | Data Architect</title>
+<style>
+:root {
+  --bg:#f5f7fb; --surface:#fff; --ink:#172033; --muted:#64748b;
+  --primary:#2563eb; --primary-dark:#1d4ed8; --line:#dbe4f0;
+  --soft:#eff6ff; --dark:#0f172a;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a {color:inherit}
+nav {position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav {max-width:1180px;height:68px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo {font-weight:800;color:var(--primary);letter-spacing:.2px}
+.nav-links {display:flex;gap:25px;list-style:none}
+.nav-links a {text-decoration:none;color:#475569;font-size:14px;font-weight:600}
+.nav-links a:hover {color:var(--primary)}
+.menu {display:none;border:0;background:none;font-size:25px}
+.hero {padding:145px 24px 90px;background:radial-gradient(circle at 80% 20%,#dbeafe,transparent 30%),linear-gradient(135deg,#f8fbff,#eef4ff)}
+.container {max-width:1180px;margin:auto}
+.hero-grid {display:grid;grid-template-columns:1.45fr .85fr;gap:70px;align-items:center}
+.kicker,.eyebrow {font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;color:var(--primary)}
+h1 {font-size:clamp(44px,6vw,70px);line-height:1.02;margin:12px 0 20px;letter-spacing:-2px}
+.hero h1 span {color:var(--primary)}
+.lead {font-size:18px;color:#526174;max-width:760px}
+.contact-line {margin-top:22px;color:#475569;font-size:14px}
+.contact-line a {text-decoration:none;color:var(--primary)}
+.btns {margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn {display:inline-block;text-decoration:none;padding:11px 18px;border-radius:9px;font-size:14px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--primary);cursor:pointer}
+.btn.primary {background:var(--primary);border-color:var(--primary);color:#fff}
+.btn:hover {transform:translateY(-1px)}
+.arch-card {background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 20px 55px rgba(30,64,175,.10)}
+.arch-title {font-weight:800;margin-bottom:18px}
+.arch-flow {display:grid;gap:9px}
+.arch-box {padding:12px;border:1px solid #dbeafe;background:var(--soft);border-radius:9px;text-align:center;color:#1e40af;font-size:13px;font-weight:700}
+.arrow {text-align:center;color:#94a3b8}
+section {padding:88px 24px}
+.section-head {margin-bottom:38px}
+.section-head h2 {font-size:34px;line-height:1.15;margin-bottom:8px}
+.section-head p {color:var(--muted);max-width:760px}
+.summary {font-size:17px;color:#526174;max-width:950px}
+.grid {display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card {background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3 {font-size:17px;margin-bottom:9px}
+.card p,.card li {color:#536174;font-size:14px}
+.pill-wrap {display:flex;flex-wrap:wrap;gap:10px}
+.pill {background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:13px;color:#334155}
+.pill:hover {border-color:#93c5fd;background:var(--soft);color:#1d4ed8}
+.alt {background:#eef3f9}
+.timeline {position:relative;margin-left:10px;padding-left:34px;border-left:2px solid #dbeafe}
+.timeline-item {position:relative;margin-bottom:42px}
+.timeline-dot {position:absolute;left:-43px;top:3px;width:15px;height:15px;border-radius:50%;background:var(--primary);border:4px solid #dbeafe}
+.timeline-content {background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.timeline-content h3 {font-size:22px;margin:4px 0 5px}
+.role-meta {color:#64748b;font-size:14px;margin-bottom:2px}
+.timeline-content ul {margin:14px 0 0 20px;color:#536174}
+.timeline-content li {margin-bottom:7px}
+.project {cursor:pointer;transition:.2s}
+.project:hover {transform:translateY(-3px);box-shadow:0 12px 30px rgba(15,23,42,.06)}
+.project h3 {color:#1e40af}
+.project-details {display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:#536174}
+.project.open .project-details {display:block}
+.stats {display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.stat {background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.stat strong {display:block;font-size:27px;color:var(--primary)}
+.stat span {font-size:13px;color:var(--muted)}
+.contact {background:var(--dark);color:#fff}
+.contact .section-head h2 {color:#fff}
+.contact .section-head p {color:#cbd5e1}
+.contact-box {background:#1e293b;border:1px solid #334155;border-radius:15px;padding:28px;display:flex;justify-content:space-between;gap:25px;align-items:center}
+.contact-box p {color:#cbd5e1;font-size:14px;margin:4px 0}
+footer {background:#020617;color:#94a3b8;text-align:center;padding:24px;font-size:12px}
+@media(max-width:850px){
+  .hero-grid,.grid {grid-template-columns:1fr}
+  .nav-links {display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 24px;flex-direction:column;border-bottom:1px solid var(--line)}
+  .nav-links.open {display:flex}
+  .menu {display:block}
+}
+@media(max-width:600px){
+  .hero {padding-top:120px}
+  h1 {font-size:44px}
+  .stats {grid-template-columns:1fr}
+  .contact-box {flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav">
+  <div class="logo">Bharath M · Data Architect</div>
+  <button class="menu" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">Data Architect · Azure · Big Data</div>
+      <h1>Enterprise <span>data solutions</span> built to scale.</h1>
+      <p class="lead">Results-oriented Data engineering with over 13 years of experience in cloud data platforms, enterprise data engineering, and architecture—specializing in Azure, Databricks, and metadata-driven frameworks. Proven track record of delivering scalable, secure, and automated data solutions that support complex business needs and digital transformation. Adept at leading cross-functional teams, executing large-scale cloud migrations, and aligning technical execution with strategic business goals. Experienced in supporting global finance functions and ERP transformation initiatives.</p>
+      <div class="contact-line">📍 London, UK &nbsp; · &nbsp; 📧 <a href="mailto:mvbharath04@hotmail.com">mvbharath04@hotmail.com</a> &nbsp; · &nbsp; 📞 +44 7916318622</div>
+      <div class="btns">
+        <a class="btn primary" href="#experience">Explore Experience</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>13+</strong><span>Years of experience</span></div>
+        <div class="stat"><strong>70%</strong><span>Code duplication reduction</span></div>
+        <div class="stat"><strong>60%</strong><span>Query performance improvement</span></div>
+      </div>
+    </div>
+    <div class="arch-card">
+      <div class="arch-title">Data Platform Architecture</div>
+      <div class="arch-flow">
+        <div class="arch-box">Enterprise Sources · SAP · Oracle · Salesforce</div>
+        <div class="arrow">↓</div>
+        <div class="arch-box">Azure Data Factory · AWS Glue · REST APIs</div>
+        <div class="arrow">↓</div>
+        <div class="arch-box">Databricks · PySpark · Spark SQL</div>
+        <div class="arrow">↓</div>
+        <div class="arch-box">Delta Lake · ADLS Gen2 · Snowflake</div>
+        <div class="arrow">↓</div>
+        <div class="arch-box">Power BI · Analytics · Reporting</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+<div class="container">
+  <div class="section-head"><h2>Professional Summary</h2><p>Architecture, engineering and delivery leadership across cloud data platforms.</p></div>
+  <p class="summary">Results-oriented Data engineering with over 13 years of experience in cloud data platforms, enterprise data engineering, and architecture—specializing in Azure, Databricks, and metadata-driven frameworks. Proven track record of delivering scalable, secure, and automated data solutions that support complex business needs and digital transformation. Adept at leading cross-functional teams, executing large-scale cloud migrations, and aligning technical execution with strategic business goals. Experienced in supporting global finance functions and ERP transformation initiatives.</p>
+</div>
+</section>
+
+<section id="skills" class="alt">
+<div class="container">
+  <div class="section-head"><h2>Core Competencies</h2><p>Technical capabilities and enterprise platforms reflected in the supplied profile.</p></div>
+  <div class="pill-wrap">
+    <span class='pill'>Cloud Platforms: Azure Data Hub, AWS, Snowflake, Palantir Foundry</span><span class='pill'>ETL/ELT &amp; Pipelines: ADF, Databricks, PySpark, AWS Glue</span><span class='pill'>Data Architecture: Lakehouse, Delta Lake, ADLS Gen2, Star Schema</span><span class='pill'>Integration &amp; Automation: Metadata Frameworks, Kafka, CI/CD, Azure DevOps</span><span class='pill'>Programming Languages: Python, SQL</span><span class='pill'>Visualization &amp; Reporting: Power BI, Excel VBA</span><span class='pill'>Governance &amp; Compliance: GDPR, SSO, ITIL v3</span><span class='pill'>Tools &amp; Frameworks: Sparx EA, SQL, Git, REST APIs</span><span class='pill'>ERP &amp; Systems: SAP, Oracle, Salesforce, Ariba</span>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+  <div class="section-head"><h2>Professional Experience</h2><p>Selected responsibilities and delivery achievements from the supplied career profile.</p></div>
+  <div class="timeline">
+    
+    <article class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="eyebrow">Professional Experience</div>
+        <h3>Data Architect</h3>
+        <div class='role-meta'>Infosys Ltd @ British Petroleum (BP), London, UK</div><div class='role-meta'>Feb 2024 – Present</div>
+        <ul><li>Led migration from Cloudera to Azure, designing a scalable Lakehouse architecture using Databricks and Azure Data Factory (ADF).</li><li>Built a metadata-driven transformation framework in PySpark, reducing code duplication by 70% and improving maintainability.</li><li>Designed and implemented end-to-end ETL pipelines supporting Power BI reporting, historical data processing, and audit traceability.</li><li>Automated delta ingestion and CI/CD pipelines using Azure DevOps and Git, enabling faster and more reliable deployments.</li><li>Directed a team of 6 data engineers, overseeing sprint planning, code reviews, and technical mentoring to ensure delivery quality and consistency.</li><li>Applied advanced data optimization techniques including partitioning, Z-ordering, and caching strategies in Delta Lake to improve query performance by 60%.</li><li>Managed ingestion and transformation of mid-sized datasets (~10–50 TB), ensuring efficient storage, processing, and retrieval across multiple business domains.</li><li>Collaborated with enterprise architects and business stakeholders to align data models with evolving reporting and analytics needs.</li><li>Established data quality checks and monitoring dashboards to proactively detect anomalies and ensure data integrity.</li><li>Designed and implemented scalable information architecture solutions aligned with industry best practices, improving data discoverability and usability across enterprise systems.</li><li>Delivered end-to-end data solutions using Azure (e.g., Synapse, Data Factory, Purview) and AWS (e.g., Redshift, Glue) cloud platforms.</li><li>Defined and executed enterprise data strategies in collaboration with customer architects, aligning technical roadmaps with business objectives.</li><li>Developed robust data models, enforced database development standards, and built analytics systems to support real-time and batch processing.</li><li>Led data integration initiatives across heterogeneous systems and implemented data governance frameworks to ensure data quality, lineage, and compliance.</li></ul>
+      </div>
+    </article>
+    
+    <article class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="eyebrow">Professional Experience</div>
+        <h3>Senior Data Engineer</h3>
+        <div class='role-meta'>Wipro Technologies @ British Petroleum (BP), London, UK</div><div class='role-meta'>Dec 2015 – Feb 2024</div>
+        <ul><li>Developed metadata automation to dynamically generate Spark scripts, improving auditability and reducing manual coding effort.</li><li>Built a machine learning model to forecast ticket priority, enhancing triage efficiency and reducing incident resolution time.</li><li>Integrated SAP, Oracle, Salesforce, and Ariba into a centralized Azure data lake, enabling unified reporting and analytics.</li><li>Created Power BI dashboards and optimized reporting layer data models for finance and procurement domains.</li><li>Designed and implemented an automation framework to convert legacy HiveQL (HQL) scripts into Spark SQL, accelerating the migration from Cloudera to Azure Databricks.</li><li>Led the development of reusable PySpark modules and parameterized pipelines to support scalable and maintainable data workflows.</li><li>Utilized Palantir Foundry to orchestrate complex data transformations and lineage tracking across finance and operations datasets.</li><li>Built and maintained ETL pipelines using AWS Glue, integrating structured and semi-structured data from multiple sources into Snowflake and S3-based data lakes.</li><li>Collaborated with cross-functional teams to ensure data quality, lineage, and compliance with GDPR and internal audit standards.</li><li>Mentored junior engineers and contributed to knowledge-sharing initiatives across global teams.</li></ul>
+      </div>
+    </article>
+    
+    <article class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="eyebrow">Professional Experience</div>
+        <h3>Senior Technical Lead</h3>
+        <div class='role-meta'>Wipro Technologies @ British Petroleum (BP), Hyderabad, India</div><div class='role-meta'>Jun 2011 – Dec 2015</div>
+        <ul><li>Developed enterprise-grade .NET applications and REST/SOAP APIs for internal business processes.</li><li>Led development of RSA APS and custom web application for business users, enhancing security and productivity.</li><li>Designed and implemented secure web applications for internal workflows, integrating RSA SecurID token-based authentication for enhanced access control.</li><li>Coordinated with clients and managed a team for application delivery and support, ensuring timely and quality releases.</li><li>Built reusable components and libraries to accelerate development cycles and maintain consistency across applications.</li><li>Conducted performance tuning and optimization of legacy systems to improve response times and reduce infrastructure costs.</li><li>Facilitated knowledge transfer, onboarding, and mentoring of junior developers across multiple projects.</li><li>Ensured compliance with ITIL processes and internal audit requirements through structured documentation and change management.</li></ul>
+      </div>
+    </article>
+    
+  </div>
+</div>
+</section>
+
+<section id="projects" class="alt">
+<div class="container">
+  <div class="section-head"><h2>Projects of Note</h2><p>Click a project to expand the source-provided description.</p></div>
+  <div class="grid">
+    <article class='card project' onclick='toggleProject(this)'><h3>ERP Data Strategy Enablement</h3><p>Supported BP’s ERP transformation by aligning data models and integration frameworks with future-state platforms.</p><div class='project-details'>Click again to collapse.</div></article><article class='card project' onclick='toggleProject(this)'><h3>Finance Data Lakehouse</h3><p>Designed and implemented scalable data lakehouse for finance reporting and analytics across ARC, PPM, and Tax functions.</p><div class='project-details'>Click again to collapse.</div></article>
+  </div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+  <div class="section-head"><h2>Education & Certifications</h2><p>Academic qualifications and training from the supplied document.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Education</h3><ul><li>Master of Computer Applications, BITS Pilani (WASE), Hyderabad – 2015</li><li>Bachelor of Computer Science, S.V. University, Tirupati – 2011</li></ul></div>
+    <div class="card"><h3>Certifications & Training</h3><ul><li>Azure Data Engineer Associate (in progress)</li><li>ITIL v3 Foundation</li><li>Data Governance &amp; Metadata Management (internal BP training)</li></ul></div>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container">
+  <div class="section-head"><h2>Let's Connect</h2><p>Data architecture, Azure, Databricks, big data and enterprise data solutions.</p></div>
+  <div class="contact-box">
+    <div><p><strong>Email:</strong> mvbharath04@hotmail.com</p><p><strong>Phone:</strong> +44 7916318622</p><p><strong>Location:</strong> London, UK</p></div>
+    <a class="btn primary" href="mailto:mvbharath04@hotmail.com">Contact Bharath</a>
+  </div>
+</div>
+</section>
+
+<footer>© 2026 Bharath M · Data Architect | Azure & Big Data Expert | Enterprise Data Solutions Leader</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+function toggleProject(card) {
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
